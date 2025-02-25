@@ -1,0 +1,7 @@
+n=int(input())
+binary_representation=bin(n)[2:]
+count_zeros=binary_representation.count('0')
+count_ones=binary_representation.count('1')
+
+print(count_zeros)
+print(count_ones)
