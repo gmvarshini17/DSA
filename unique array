@@ -1,0 +1,6 @@
+n=int(input())
+arr=list(map(int,input().split()))
+
+is_unique=len(arr)==len(set(arr))
+
+print(is_unique)
