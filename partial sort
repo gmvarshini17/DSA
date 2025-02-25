@@ -1,0 +1,37 @@
+def partial_sort(arr, k):
+    """
+    Partially sorts an array so that first k elements are the k smallest in sorted order.
+   
+    Args:
+        arr (list): List of integers to be partially sorted
+        k (int): Number of elements to sort at the beginning
+       
+    Returns:
+        list: Partially sorted array
+    """
+   
+    result = arr.copy()
+    n = len(result)
+   
+    
+    for i in range(k):
+        min_idx = i
+        
+        for j in range(i + 1, n):
+            if result[j] < result[min_idx]:
+                min_idx = j
+        
+        result[i], result[min_idx] = result[min_idx], result[i]
+   
+    return result
+
+
+n = int(input())
+arr = list(map(int, input().split()))
+k = int(input())
+
+
+result = partial_sort(arr, k)
+
+
+print(*result)
