@@ -1,0 +1,24 @@
+def bubble_sort_and_count(arr):
+    n = len(arr)
+    swap_count = 0
+   
+    for i in range(n):
+        for j in range(0, n-i-1):  
+            if arr[j] > arr[j+1]:
+               
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+               
+                swap_count += 1
+   
+    return arr, swap_count
+
+
+n = int(input())  
+arr = list(map(int, input().split()))
+
+
+sorted_arr, total_swaps = bubble_sort_and_count(arr)
+
+
+print(" ".join(map(str, sorted_arr)))  
+print(total_swaps)  
