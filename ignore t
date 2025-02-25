@@ -1,0 +1,32 @@
+def insertion_sort_with_threshold(arr, threshold):
+    n = len(arr)
+   
+    for i in range(1, n):
+        key = arr[i]
+       
+        
+        if key > threshold:
+            continue
+           
+        j = i - 1
+       
+       
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+           
+        arr[j + 1] = key
+       
+    return arr
+
+
+def main():
+    n = int(input().strip())
+    arr = list(map(int, input().strip().split()))
+    threshold = int(input().strip())
+   
+    result = insertion_sort_with_threshold(arr, threshold)
+    print(' '.join(map(str, result)))
+
+if __name__ == "__main__":
+    main()
